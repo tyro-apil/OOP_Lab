@@ -4,6 +4,7 @@ print out the values in the format 11/28/2004 by function. Pass the structure to
 */
 
 #include <iostream>
+#include <iomanip>
 
 typedef struct date
 {
@@ -23,5 +24,5 @@ int main()
 
 void show_date(Date* date_format)
 {
-    std::cout<<date_format->month << "/" << date_format->day << "/" << date_format->year << std::endl;
+    std::cout<< std::setw(2) << date_format->month << "/" << std::setw(2) << date_format->day << "/" << std::setw(4) <<date_format->year << std::endl;
 }
