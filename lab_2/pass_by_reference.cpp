@@ -6,19 +6,28 @@ using return by reference.
 #include<iostream>
 #include<iomanip>
 
-float larger_temperature(float*, float*);
+float &larger_temperature(float&, float&);
 
 int main()
 {
-    float temp1 = 500.1, temp2=350.5;
+    float temp1, temp2, set_temp;
+    std::cout << "Enter two temperatures: ";
+    std::cin >> temp1 >> temp2;
+    std::cout << "Enter set temperature: ";
+    std::cin >> set_temp;
     
+    larger_temperature(temp1, temp2) = set_temp;
+
     std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Higher temperature between " << temp1 << " and " << temp2 << " is " << larger_temperature(&temp1, &temp2) << std::endl;
-    
+    std::cout << "Temperature 1 = " << temp1 << std::endl << "Temperature 2 = " << temp2 << std::endl;
     return 0;
 }
 
-float larger_temperature(float* temp1, float* temp2)
+float &larger_temperature(float& temp1, float& temp2)
 {
-    return ((*temp1 > *temp2)? *temp1: *temp2);
+    if (temp1 > temp2)
+    {
+        return temp1;
+    }
+    return temp2;
 }
