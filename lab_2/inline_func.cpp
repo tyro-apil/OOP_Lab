@@ -4,12 +4,14 @@ function to display the net payment to the employee by the company.
 */
 
 #include<iostream>
+#include<iomanip>
 
 inline float calc_tax(float);
 
 int main()
 {
     float income = 51289.23;
+    std::cout<<std::fixed<<std::setprecision(2);
     std::cout<<"Net payment for salary "<< income << " = "<<income - calc_tax(income)<<std::endl;
     return 0;
 }
