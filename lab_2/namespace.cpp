@@ -14,7 +14,7 @@ namespace Square
     int num=2;
     int fun(int n)
     {
-        return n*n;
+        return n*n*n;
     }
 }
 
@@ -23,7 +23,7 @@ namespace Cube
     int num=3;
     int fun(int n)
     {
-        return n*n*n;
+        return n*n;
     }
 }
 
@@ -31,8 +31,8 @@ int main()
 {
     Square::num = 5;
     Cube::num = 4;
-    std::cout << "Square of " << Square::num << " = " << Square::fun(Square::num) << std::endl;
-    std::cout << "Cube of " << Cube::num << " = " << Cube::fun(Cube::num) << std::endl;
+    std::cout << "Cube of " << Square::num << " = " << Square::fun(Square::num) << std::endl;
+    std::cout << "Square of " << Cube::num << " = " << Cube::fun(Cube::num) << std::endl;
 
     return 0;
 }
