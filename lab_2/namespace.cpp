@@ -29,7 +29,8 @@ namespace Cube
 
 int main()
 {
-    
+    Square::num = 5;
+    Cube::num = 4;
     std::cout << "Square of " << Square::num << " = " << Square::fun(Square::num) << std::endl;
     std::cout << "Cube of " << Cube::num << " = " << Cube::fun(Cube::num) << std::endl;
 
